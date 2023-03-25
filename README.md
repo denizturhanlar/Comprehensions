@@ -1,3 +1,3 @@
-# MIUUL Pyhton Comprehension
+# MIUUL DSML BOOTCAMP Comprehension HW
 ## Comprehension
- - xdgdhdh
+ - List Comprehension yapısı kullanarak car_crashes verisi üzerinde çalışmalar yaptım
