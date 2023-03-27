@@ -1,3 +1,3 @@
 # Comprehension
 ## Miuul DSML Bootcamp Comprehension HW
- - List Comprehension yapısı kullanarak car_crashes verisi üzerinde çalışmalar yaptım
+ - I have done studies on car_crashes data using the List Comprehension
