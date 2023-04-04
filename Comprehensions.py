@@ -1,10 +1,10 @@
 ##################################################
 # List Comprehensions
 
-# # GÖREV 1: List Comprehension yapısı kullanarak car_crashes verisindeki numeric değişkenlerin isimlerini büyük harfe çeviriniz ve başına NUM ekleyiniz.
+#TASK 1: Using the List Comprehension structure, capitalize the names of the numeric variables in the car_crashes data and add NUM to the beginning.
 # ###############################################
 
-# Beklenen Çıktı
+# Expected Output
 #
 # # ['NUM_TOTAL',
 # #  'NUM_SPEEDING',
@@ -15,21 +15,21 @@
 # #  'NUM_INS_LOSSES',
 # #  'ABBREV']
 #
-#Notlar:
-#Numerik olmayanların da isimleri büyümeli.
-#Tek bir list comp yapısı ile yapılmalı.
+#Notes:
+#Non-numeric names should also grow.
+#Must be done with a single list comp structure.
 
-#kütüpahaneyi import edelim
+#import the libraries
 import seaborn as sns
 df = sns.load_dataset("car_crashes")
 
-#List Comp ile yapalım önce:
+#by using list comprehensions
 df = sns.load_dataset("car_crashes")
 df.columns
 
 ["NUM_" + col.upper() if df[col].dtype != "O" else col.upper() for col in df.columns]
 
-#Klasik olarak yani list comp kullanmadan da yapabilirdik:
+#we can write without using comprehensions
 df.columns
 df.info()
 
@@ -42,14 +42,14 @@ for col in df.columns:
 
 
 ################################################
-# # GÖREV 2: List Comprehension yapısı kullanarak car_crashes verisindeki isminde "no" barındırmayan değişkenlerin isimlerininin sonuna "FLAG" yazınız.
+#TASK 2: Using the List Comprehension structure, write "FLAG" after the names of the variables in the car_crashes data that do not contain "no" in their names.
 
 
-#Notlar:
-#Tüm değişken isimleri büyük olmalı.
-#Tek bir list comp ile yapılmalı.
+#Notes:
+#Non-numeric names should also grow.
+#Must be done with a single list comp structure
 
-#Beklenen çıktı:
+#Expected Output:
 #
 # # ['TOTAL_FLAG',
 # #  'SPEEDING_FLAG',
@@ -61,14 +61,14 @@ for col in df.columns:
 # #  'ABBREV_FLAG']
 
 
-#List Comp kullanarak yazıyoruz:
+#Using by List Comp
 df = sns.load_dataset("car_crashes")
 df.columns
 
 [col.upper() + "_FLAG" if "no" not in col else col.upper() for col in df.columns]
 
 
-#List Comp kullanmadan da yazabilirdik:
+#Without using bu list comp
 df = sns.load_dataset("car_crashes")
 df.columns
 
@@ -83,16 +83,16 @@ a
 
 
 # ###############################################
-# # Görev 3: List Comprehension yapısı kullanarak aşağıda verilen değişken isimlerinden FARKLI olan değişkenlerin isimlerini seçiniz ve yeni bir dataframe oluşturunuz.
+#Task 3: Using the List Comprehension structure, select the names of the variables that are DIFFERENT from the variable names given below and create a new dataframe.
 
 
 og_list = ["abbrev", "no_previous"]
 
-#Notlar:
-#Önce yukarıdaki listeye göre list comprehension kullanarak new_cols adında yeni liste oluşturunuz.
-#Sonra df[new_cols] ile bu değişkenleri seçerek yeni bir df oluşturunuz adını new_df olarak isimlendiriniz.
+# Notes:
+#First, create a new list named new_cols using list comprehension according to the list above.
+#Then create a new df by selecting these variables with df[new_cols] and name it new_df.
 
-# # Beklenen çıktı:
+#Expected Output:
 #
 # #    total  speeding  alcohol  not_distracted  ins_premium  ins_losses
 # # 0 18.800     7.332    5.640          18.048      784.550     145.080
@@ -101,7 +101,7 @@ og_list = ["abbrev", "no_previous"]
 # # 3 22.400     4.032    5.824          21.056      827.340     142.390
 # # 4 12.000     4.200    3.360          10.920      878.410     165.630
 
-# List Comp kullanarak yazalım:
+# by using list comp
 df = sns.load_dataset("car_crashes")
 og_list = ["abbrev", "no_previous"]
 
@@ -111,7 +111,7 @@ new_df =df[new_columns]
 
 new_df.head()
 
-#List comp kullanmadan da yazabilirdik :
+#Without using bu list comp:
 df = sns.load_dataset("car_crashes")
 og_list = ["abbrev", "no_previous"]
 
